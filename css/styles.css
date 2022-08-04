@@ -86,6 +86,9 @@ img {
 
   --backdrop-color: rgba(0, 0, 0, 0.2);
 
+  --placeholder-text-holder: rgba(255, 255, 255, 0.6);
+  --main-shadow-color: rgba(0, 0, 0, 0.15);
+
   /* Others */
   --timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -783,11 +786,13 @@ button {
   line-height: 1.71;
 }
 
-.join-section {
+.join-section,
+.subscribe-section {
   color: var(--white-text-color);
 }
 
-.join-caption {
+.join-caption,
+.subscribe-caption {
   display: inline-block;
   font-weight: 700;
   font-size: 14px;
@@ -820,4 +825,58 @@ button {
   display: block;
   margin-bottom: 9px;
   color: var(--white-text-color);
+}
+
+.subscribe-section {
+  margin-left: auto;
+}
+
+.subscribe-form {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.email-field {
+  width: 358px;
+  height: 50px;
+  background-color: var(--transparent);
+  padding: 15px 0 15px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  filter: drop-shadow(0px 4px 4px var(--shadow-color));
+  border-radius: 4px;
+
+  font-size: 16px;
+  line-height: 1.25;
+  color: var(--placeholder-text-color);
+
+  transition: border-color 250ms var(--timing-function);
+}
+
+.email-field:hover,
+.email-field:focus {
+  border-color: var(--accent-color);
+}
+
+.subcribe-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  height: 50px;
+  margin-left: 12px;
+  box-shadow: 0px 4px 4px var(--shadow-color);
+  border-radius: 4px;
+
+  background-color: var(--accent-color);
+  color: var(--white-text-color);
+
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.88;
+  letter-spacing: 0.06em;
+}
+
+.icon-send {
+  margin-left: 10px;
 }

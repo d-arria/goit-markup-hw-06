@@ -86,8 +86,8 @@ img {
 
   --backdrop-color: rgba(0, 0, 0, 0.2);
 
-  --placeholder-text-holder: rgba(255, 255, 255, 0.6);
-  --main-shadow-color: rgba(0, 0, 0, 0.15);
+  --placeholder-text-color: rgba(255, 255, 255, 0.6);
+  --placeholder-comment-color: rgba(117, 117, 117, 0.5);
 
   /* Others */
   --timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -302,6 +302,9 @@ button {
   letter-spacing: 0.06em;
 }
 
+/* ----------------------------------------------------- */
+/* Main. Hero. Modal window */
+
 .backdrop {
   position: fixed;
   top: 0;
@@ -330,6 +333,7 @@ button {
   min-height: 581px;
   left: 50%;
   top: 50%;
+  padding: 40px;
 
   background-color: var(--primary-background-color);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
@@ -358,6 +362,156 @@ button {
 
 .icon-close {
   fill: currentColor;
+}
+
+.modal-caption {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.15;
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-right: auto;
+  margin-bottom: 20px;
+}
+
+.form-field {
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.form-label {
+  text-align: left;
+  font-size: 12px;
+  line-height: 1.16;
+  letter-spacing: 0.01em;
+  margin-bottom: 4px;
+
+  color: var(--secondary-text-color);
+}
+
+.form-input {
+  display: inline-block;
+  width: 448px;
+  height: 40px;
+  padding-left: 42px;
+
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+
+  transition: border-color 250ms var(--timing-function);
+}
+
+.form-input:focus-within {
+  border-color: var(--accent-color);
+}
+
+.form-icon {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+
+  transform: translateY(-50%);
+  fill: currentColor;
+
+  transition: fill 250ms var(--timing-function);
+}
+
+.form-field:focus-within .form-icon {
+  fill: var(--accent-color);
+}
+
+.comment-box {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.comment-area {
+  border: none;
+  resize: none;
+  width: 448px;
+  height: 120px;
+  padding: 12px 16px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+
+  transition: border-color 250ms var(--timing-function);
+}
+
+.comment-area:focus-within {
+  border-color: var(--accent-color);
+}
+
+.comment-area::placeholder {
+  font-size: 12px;
+  line-height: 1.16;
+  letter-spacing: 0.01em;
+  color: var(--placeholder-comment-color);
+}
+
+.policy {
+  display: inline-block;
+  margin-bottom: 30px;
+  outline: 1px solid blueviolet;
+}
+
+.checkbox {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  position: absolute;
+}
+
+.icon-check {
+  display: inline-block;
+  width: 16px;
+  height: 15px;
+  background-color: inherit;
+
+  border: 2px solid #212121;
+  border-radius: 2px;
+
+  transition: border-color 250ms var(--timing-function),
+    background-color 250ms var(--timing-function), fill 250ms var(--timing-function);
+}
+
+.test {
+  width: 20px;
+  height: 20px;
+  fill: #000000;
+}
+
+.checkbox:checked + .icon-check {
+  background-image: url(../images/check-2.svg);
+  background-origin: border-box;
+  background-size: contain;
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+  fill: var(--icon-secondary-color);
+}
+
+.policy-text {
+  font-size: 14px;
+  line-height: 1.71;
+  color: var(--secondary-text-color);
+}
+
+.contract-link {
+  text-decoration-line: underline;
+  color: var(--accent-color);
 }
 
 /* ----------------------------------------------------- */
@@ -843,7 +997,7 @@ button {
   background-color: var(--transparent);
   padding: 15px 0 15px 16px;
   border: 1px solid rgba(255, 255, 255, 0.3);
-  filter: drop-shadow(0px 4px 4px var(--shadow-color));
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
   border-radius: 4px;
 
   font-size: 16px;
@@ -858,14 +1012,14 @@ button {
   border-color: var(--accent-color);
 }
 
-.subcribe-btn {
+.form-btn {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 200px;
   height: 50px;
   margin-left: 12px;
-  box-shadow: 0px 4px 4px var(--shadow-color);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
 
   background-color: var(--accent-color);
@@ -878,5 +1032,6 @@ button {
 }
 
 .icon-send {
+  fill: currentColor;
   margin-left: 10px;
 }

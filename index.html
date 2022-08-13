@@ -81,9 +81,6 @@
                 </svg>
               </button>
 
-              <!-- <form class="form"><form class="form"><form class="form"><form class="form"></form> -->
-              <!-- <form class="form"><form class="form"><form class="form"><form class="form"></form> -->
-              <!-- <form class="form"><form class="form"><form class="form"><form class="form"></form> -->
               <form class="form">
                 <div role="group" class="group">
                   <label for="name" class="form-label">Имя</label>
@@ -125,15 +122,14 @@
                 <label class="policy">
                   <input class="checkbox" type="checkbox" name="policy" />
                   <span class="icon-check"></span>
-                  <span class="policy-text">Соглашаюсь с рассылкой и принимаю</span>
-                  <a href="" class="contract-link">Условия договора</a>
+                  <span class="policy-text">
+                    Соглашаюсь с рассылкой и принимаю
+                    <a href="" class="contract-link">Условия договора</a>
+                  </span>
                 </label>
 
-                <button class="form-btn">Отправить</button>
+                <button class="form-btn" type="submit">Отправить</button>
               </form>
-              <!-- <form class="form"><form class="form"><form class="form"><form class="form"></form> -->
-              <!-- <form class="form"><form class="form"><form class="form"><form class="form"></form> -->
-              <!-- <form class="form"><form class="form"><form class="form"><form class="form"></form> -->
             </div>
           </div>
         </div>
@@ -528,8 +524,10 @@
           <b class="subscribe-caption">Подпишитесь на рассылку</b>
 
           <form class="subscribe-form">
-            <input type="email" name="email" id="email" placeholder="E-mail" class="email-field" />
-            <button class="form-btn button">
+            <label>
+              <input type="email" name="email" placeholder="E-mail" class="email-field" />
+            </label>
+            <button class="form-btn button" type="submit">
               Подписаться
               <svg class="icon-send" width="24px" height="24px">
                 <use href="./images/sprite.svg#icon-send"></use>
